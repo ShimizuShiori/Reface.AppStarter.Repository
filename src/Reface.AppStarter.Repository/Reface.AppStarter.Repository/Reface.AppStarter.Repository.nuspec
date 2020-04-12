@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Reface.AppStarter.Repository</id>
+    <version>1.0.0</version>
+    <title>Reface.AppStarter.Repository</title>
+    <authors>Felix</authors>
+    <owners>Felix</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/ShimizuShiori/Reface.AppStarter.Repository</projectUrl>
+    <description>基于 Reface.AppStarter 设计的通用的数据存储层接口规范</description>
+    <copyright>Copyright 2020</copyright>
+  </metadata>
+</package>

@@ -79,6 +79,8 @@
     <Compile Include="AppModules\RepositoryAppModule.cs" />
     <Compile Include="Attributes\EntityAttribute.cs" />
     <Compile Include="Events\EntitiesFoundEvent.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ISelectResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

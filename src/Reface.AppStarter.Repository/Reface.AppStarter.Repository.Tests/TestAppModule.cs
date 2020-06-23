@@ -2,8 +2,9 @@
 
 namespace Reface.AppStarter.Repository.Tests
 {
-    [RepositoryAppModule]
+    [EntityScanAppModule]
     [ComponentScanAppModule]
+    [RepositoryAppModule]
     public class TestAppModule : AppModule
     {
     }

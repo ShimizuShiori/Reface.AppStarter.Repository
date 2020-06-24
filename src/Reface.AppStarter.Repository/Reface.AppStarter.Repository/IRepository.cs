@@ -13,7 +13,5 @@ namespace Reface.AppStarter.Repository
         void Delete(Expression<Func<TEntity, bool>> where);
         void Clear();
         ISelector<TEntity> Select();
-
-        int Count(Expression<Func<TEntity, bool>> condition);
     }
 }

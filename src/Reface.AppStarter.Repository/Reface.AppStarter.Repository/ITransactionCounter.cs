@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Reface.AppStarter.Repository
+﻿namespace Reface.AppStarter.Repository
 {
     /// <summary>
     /// 事务计算器，由切面产生的事务往往容易产生各种形式的嵌套。
@@ -9,7 +7,7 @@ namespace Reface.AppStarter.Repository
     /// 当提交请求数与打开请求数相同时，提交事务。<br />
     /// 当回滚事务时，立即回滚。
     /// </summary>
-    public interface ITranscationCounter
+    public interface ITransactionCounter : ITransactionNotifier
     {
         /// <summary>
         /// 计数开启事务
@@ -26,19 +24,5 @@ namespace Reface.AppStarter.Repository
         /// </summary>
         void CountRollback();
 
-        /// <summary>
-        /// 当认为此时应当开启事务时的事件
-        /// </summary>
-        event EventHandler StartBegin;
-
-        /// <summary>
-        /// 当认为此时应当提交事务时的事件
-        /// </summary>
-        event EventHandler StartCommit;
-
-        /// <summary>
-        /// 当认为此时应当回滚事务时的事件
-        /// </summary>
-        event EventHandler StartRollback;
     }
 }

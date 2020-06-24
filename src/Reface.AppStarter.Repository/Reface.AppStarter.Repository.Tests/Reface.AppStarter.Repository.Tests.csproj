@@ -106,11 +106,11 @@
     <Compile Include="EntityScanTests.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Listeners\OnEntitiesFound.cs" />
+    <Compile Include="Listeners\TranChangedOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sercices\UserService.cs" />
     <Compile Include="TestAppModule.cs" />
-    <Compile Include="TestCurrentTransactionManagerAccessor.cs" />
-    <Compile Include="TestTransactionManager.cs" />
+    <Compile Include="TestDatabaseTransactionController.cs" />
     <Compile Include="TransactionTests.cs" />
   </ItemGroup>
   <ItemGroup>

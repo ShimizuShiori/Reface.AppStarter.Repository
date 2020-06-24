@@ -9,45 +9,26 @@ namespace Reface.AppStarter.Repository.Proxies
     public class TranscationAttribute : ProxyAttribute, IOnPropertiesInjected
     {
         public ICurrentTransactionManagerAccessor CurrentTranscationAccessor { get; set; }
-        public ITranscationCounter TranscationCounter { get; set; }
+
+        private ITranscationManager tm;
 
         public override void OnExecuting(ExecutingInfo executingInfo)
         {
-            this.TranscationCounter.CountBegin();
+            tm.Begin();
         }
         public override void OnExecuted(ExecutedInfo executedInfo)
         {
-            this.TranscationCounter.CountCommit();
+            tm.Commit();
         }
 
         public override void OnExecuteError(ExecuteErrorInfo executeErrorInfo)
         {
-            this.TranscationCounter.CountRollback();
+            tm.Rollback();
         }
 
         public void OnPropertiesInjected()
         {
-            this.TranscationCounter.StartBegin += TranscationCounter_StartBegin;
-            this.TranscationCounter.StartRollback += TranscationCounter_StartRollback;
-            this.TranscationCounter.StartCommit += TranscationCounter_StartCommit;
-        }
-
-        private void TranscationCounter_StartCommit(object sender, EventArgs e)
-        {
-            if (this.CurrentTranscationAccessor == null) return;
-            this.CurrentTranscationAccessor.Get().Commit();
-        }
-
-        private void TranscationCounter_StartRollback(object sender, EventArgs e)
-        {
-            if (this.CurrentTranscationAccessor == null) return;
-            this.CurrentTranscationAccessor.Get().Rollback();
-        }
-
-        private void TranscationCounter_StartBegin(object sender, EventArgs e)
-        {
-            if (this.CurrentTranscationAccessor == null) return;
-            this.CurrentTranscationAccessor.Get().Begin();
+            this.tm = this.CurrentTranscationAccessor.Get();
         }
     }
 }

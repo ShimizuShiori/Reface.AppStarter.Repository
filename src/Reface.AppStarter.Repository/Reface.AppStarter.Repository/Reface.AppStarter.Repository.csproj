@@ -64,9 +64,6 @@
     <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.1.0.0.505\lib\NLog.dll</HintPath>
     </Reference>
-    <Reference Include="Reface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.1.1.0\lib\netstandard2.0\Reface.dll</HintPath>
-    </Reference>
     <Reference Include="Reface.AppStarter, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Reface.AppStarter.2.1.14\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
@@ -104,12 +101,18 @@
     <Compile Include="AppModules\EntityScanAppModule.cs" />
     <Compile Include="AppModules\RepositoryAppModule.cs" />
     <Compile Include="Attributes\EntityAttribute.cs" />
+    <Compile Include="DefaultCurrentTransactionManagerAccessor.cs" />
     <Compile Include="DefaultTransactionCounter.cs" />
+    <Compile Include="DefaultTransactionListener.cs" />
+    <Compile Include="DefaultTransactionManager.cs" />
     <Compile Include="Events\EntitiesFoundEvent.cs" />
     <Compile Include="ICurrentTransactionManagerAccessor.cs" />
+    <Compile Include="IDatabaseTransactionController.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="ISelector.cs" />
-    <Compile Include="ITranscationCounter.cs" />
+    <Compile Include="ITransactionListener.cs" />
+    <Compile Include="ITransactionNotifier.cs" />
+    <Compile Include="ITransactionCounter.cs" />
     <Compile Include="ITranscationManager.cs" />
     <Compile Include="IUpdateCondition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

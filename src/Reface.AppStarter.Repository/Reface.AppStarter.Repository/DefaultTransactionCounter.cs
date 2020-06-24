@@ -4,7 +4,7 @@ using System;
 namespace Reface.AppStarter.Repository
 {
     [Component]
-    public class DefaultTransactionCounter : ITranscationCounter
+    public class DefaultTransactionCounter : ITransactionCounter
     {
         public event EventHandler StartBegin;
         public event EventHandler StartCommit;

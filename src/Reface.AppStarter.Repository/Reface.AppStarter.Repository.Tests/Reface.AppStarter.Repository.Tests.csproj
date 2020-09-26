@@ -68,7 +68,7 @@
       <HintPath>..\packages\NLog.1.0.0.505\lib\NLog.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Reface.AppStarter.2.1.14\lib\net461\Reface.AppStarter.dll</HintPath>
+      <HintPath>..\packages\Reface.AppStarter.2.1.16\lib\net461\Reface.AppStarter.dll</HintPath>
     </Reference>
     <Reference Include="Reface.AppStarter.Proxy, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Reface.AppStarter.Proxy.2.0.1\lib\net461\Reface.AppStarter.Proxy.dll</HintPath>
@@ -102,14 +102,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppModules\JustEntityScanAppModule.cs" />
+    <Compile Include="AppModules\JustRepositoryAppModule.cs" />
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="EntityScanTests.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="JustEntityScanTests.cs" />
+    <Compile Include="JustRepositoryTests.cs" />
     <Compile Include="Listeners\OnEntitiesFound.cs" />
     <Compile Include="Listeners\TranChangedOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sercices\UserService.cs" />
-    <Compile Include="TestAppModule.cs" />
+    <Compile Include="AppModules\TestAppModule.cs" />
     <Compile Include="TestDatabaseTransactionController.cs" />
     <Compile Include="TransactionTests.cs" />
   </ItemGroup>

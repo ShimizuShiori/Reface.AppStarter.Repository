@@ -11,6 +11,13 @@ namespace Reface.AppStarter.AppModules
     /// 所有实体扫描完成后，会抛出 <see cref="EntitiesFoundEvent"/> 事件。
     /// 通知外部系统内所有已知的实体类型。
     /// </summary>
+    [ComponentScanAppModule
+        (
+            IncludeNamespaces = new string[] 
+            {
+                "Reface.AppStarter.Repository.Listeners"
+            }
+        )]
     public class EntityScanAppModule : AppModule, INamespaceFilter
     {
         public string[] IncludeNamespaces { get; set; }

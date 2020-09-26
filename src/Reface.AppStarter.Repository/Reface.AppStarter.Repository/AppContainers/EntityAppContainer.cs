@@ -2,9 +2,6 @@
 using Reface.EventBus;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Reface.AppStarter.AppContainers
 {
@@ -27,12 +24,12 @@ namespace Reface.AppStarter.AppContainers
 
         public void OnAppStarted(App app)
         {
-            IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
-            using (var scope = componentContainer.BeginScope("EntitiesFound"))
-            {
-                IEventBus eventBus = scope.CreateComponent<IEventBus>();
-                eventBus.Publish(new EntitiesFoundEvent(this, this.EntityTypes));
-            }
+            //IComponentContainer componentContainer = app.GetAppContainer<IComponentContainer>();
+            //using (var scope = componentContainer.BeginScope("EntitiesFound"))
+            //{
+            //    IEventBus eventBus = scope.CreateComponent<IEventBus>();
+            //    eventBus.Publish(new EntitiesFoundEvent(this, this.EntityTypes));
+            //}
         }
     }
 }

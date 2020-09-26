@@ -1,11 +1,15 @@
-﻿using Reface.AppStarter.AppContainerBuilders;
-
-namespace Reface.AppStarter.AppModules
+﻿namespace Reface.AppStarter.AppModules
 {
     /// <summary>
     /// 数据仓库模块
     /// </summary>
-    [ComponentScanAppModule]
+    [ComponentScanAppModule
+        (
+            ExcludeNamespaces = new string[] 
+            {
+                "Reface.AppStarter.Repository.Listeners"
+            }
+        )]
     [ProxyAppModule]
     public class RepositoryAppModule : AppModule
     {
